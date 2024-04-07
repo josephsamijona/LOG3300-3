@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,13 +10,13 @@
   <!-- Ajout de Bootstrap pour les styles -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <!-- Styles personnalisés -->
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="{% static 'style.css' %}">
 </head>
 <body>
   <!-- Barre de Navigation (Navbar) -->
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container">
-      <a class="navbar-brand" href="#"><img src="no_bg_projectbusko_new01.png" alt="Busko Logo" width="64"></a>
+      <a class="navbar-brand" href="#"> <img src="{% static 'images/no_bg_projectbusko_new01.png' %}"  alt="Busko Logo" width="64"> </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -41,7 +42,7 @@
           </li>
         </ul>
         <!-- Boutongestion.html pour la Page de Base de Données -->
-        <a href="gestion.html" class="btn btn-primary my-2 my-lg-0"><i class="fas fa-database"></i> Base de Données</a>
+        <a href="{% url 'gestion' %}" class="btn btn-primary my-2 my-lg-0"><i class="fas fa-database"></i> Base de Données</a>
       </div>
     </div>
   </nav>
@@ -56,7 +57,7 @@
           <a href="#contact" class="btn btn-primary">Contactez-nous</a>
         </div>
         <div class="col-md-6">
-          <img src="logo_busko_new1.png" alt="Hero Image" class="img-fluid">
+          <img src="{% static 'images/logo_busko_new1.png' %}" alt="Hero Image" class="img-fluid">
         </div>
       </div>
     </div>
