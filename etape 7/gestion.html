@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Busko - Base de Données</title>
+  <!-- Ajout de Bootstrap pour les styles -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <!-- Styles personnalisés -->
+  <link rel="stylesheet" href="style.css">
+  <!-- Ajout de jQuery pour les fonctionnalités JavaScript -->
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+</head>
+<body>
+  <!-- Barre de Navigation (Navbar) -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container">
+      <!-- Logo de la compagnie -->
+      <a class="navbar-brand" href="#"><img src="no_bg_projectbusko_new01.png" alt="Busko Logo" width="64"></a>
+      <!-- Bouton de bascule pour le menu sur les petits écrans -->
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <!-- Contenu de la barre de navigation -->
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="/">Accueil</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="gestion.html">Département</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="employee.html">Employee</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Contenu de la Page -->
+  <div class="container mt-5">
+    <div class="row">
+      <!-- Tableau CRUD pour le Département -->
+      <div class="col-md-12">
+        <h2 class="mb-3">Gestion des Départements</h2>
+        <!-- Bouton Ajouter pour le Département -->
+        <button class="btn btn-success mb-3" onclick="window.location.href = 'ajouter-departement.html';">Ajouter Département</button>
+
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>Department ID</th>
+              <th>Department Name</th>
+              <th>Location</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Les données du département seront affichées ici -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- Pied de Page (Footer) -->
+  <footer class="footer mt-5">
+    <div class="container text-center">
+      <p>&copy; 2024 Busko. Tous droits réservés.</p>
+    </div>
+  </footer>
+
+  <!-- Scripts JavaScript pour Bootstrap -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
