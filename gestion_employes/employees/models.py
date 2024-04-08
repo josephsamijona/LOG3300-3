@@ -6,6 +6,7 @@
 #   * Remove `managed = False` lines if you wish to allow Django to create, modify, and delete the table
 # Feel free to rename the models, but don't rename db_table values or field names.
 from django.db import models
+from django.urls import reverse
 
 
 class AuthGroup(models.Model):
@@ -78,9 +79,15 @@ class AuthUserUserPermissions(models.Model):
 
 
 class Department(models.Model):
-    department_id = models.IntegerField(db_column='Department_ID', primary_key=True)  # Field name made lowercase.
-    department_name = models.CharField(db_column='Department_Name', max_length=255, blank=True, null=True)  # Field name made lowercase.
-    location = models.CharField(db_column='Location', max_length=255, blank=True, null=True)  # Field name made lowercase.
+    department_id = models.IntegerField(db_column='Department_ID', primary_key=True)
+    department_name = models.CharField(db_column='Department_Name', max_length=255, blank=True, null=True)
+    location = models.CharField(db_column='Location', max_length=255, blank=True, null=True)
+
+    def get_update_url(self):
+        return reverse('update_department', kwargs={'pk': self.department_id})
+
+    def get_delete_url(self):
+        return reverse('delete_department', kwargs={'pk': self.department_id})
 
     class Meta:
         managed = False

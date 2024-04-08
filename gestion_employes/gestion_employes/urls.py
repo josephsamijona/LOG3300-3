@@ -17,6 +17,8 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from employees import views
+from django.conf import settings
+from django.conf.urls.static import static
 
 
 urlpatterns = [
@@ -26,4 +28,7 @@ urlpatterns = [
     path('employee/', views.employee, name='employee'),
     path('ajouter-departement/', views.ajouter_departement, name='ajouter_departement'),
     path('ajouter-employee/', views.ajouter_employee, name='ajouter_employee'),
+    path('update_department/<int:pk>/', views.update_department, name='update_department'),
+    path('delete_department/<int:pk>/', views.delete_department, name='delete_department'),
 ]
+urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
